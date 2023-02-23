@@ -1,4 +1,4 @@
-# gorjious Glyphs-Scripts
+# gorjious glyphs-scripts
 # Guides
 ## Add Custom Guidelines through Selected Nodes
 Opens a menu to present options for adding guideline(s) to the selected node(s) at a specified angle. Includes presets for pre-defined angles and ratio to create guidelines quickly.
