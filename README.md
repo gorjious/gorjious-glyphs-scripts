@@ -1,6 +1,6 @@
 # gorjious Glyphs-Scripts
 # Guides
-## Guide Dawg | Add custom and preset guideline(s)
+## Add Custom Guidelines through Selected Nodes
 Opens a menu to present options for adding guideline(s) to the selected node(s) at a specified angle. Includes presets for pre-defined angles and ratio to create guidelines quickly.
 
 Presets:
@@ -15,6 +15,8 @@ Options:
 
 • Mirror angle
 
-• Keep Window Open
+• Keep window open
 
-• Delete All (local guides on the current layer)
+• Delete All (local guides on the currently selected glyph)
+
+• Zero V/H (Vertical and Horizontal guidelines are shifted to y=0 and x=0 coordinates, respectively)
