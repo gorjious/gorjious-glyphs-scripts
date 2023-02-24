@@ -20,3 +20,9 @@ Options:
 • Delete All (local guides on the currently selected glyph)
 
 • Zero V/H (Vertical and Horizontal guidelines are shifted to y=0 and x=0 coordinates, respectively)
+
+
+This project uses the ChatGPT model from OpenAI for natural language processing.
+ChatGPT is an AI language model that can generate text responses to a wide range of prompts.
+This project was a collaboration between ChatGPT and Gor Jihanian (@gorjious)
+Credit: OpenAI (https://openai.com/)
