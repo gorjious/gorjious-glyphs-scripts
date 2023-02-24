@@ -9,7 +9,7 @@ Presets:
 
 • Ratios: 5:1 4:1 3: 2:1 3:2
 
-• Italic Angle
+• Italic Angle (specified by the Masters -> Metrics -> Italic Angle)
 
 Options: 
 
@@ -21,6 +21,7 @@ Options:
 
 • Zero V/H (Vertical and Horizontal guidelines are shifted to y=0 and x=0 coordinates, respectively)
 
+Note: If no nodes are selected then the guideline is added to the 0,0 coordinate.
 
 This project uses the ChatGPT model from OpenAI for natural language processing.
 ChatGPT is an AI language model that can generate text responses to a wide range of prompts.
