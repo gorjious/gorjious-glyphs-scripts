@@ -1,10 +1,10 @@
-#MenuTitle: Add Custom Guideline through Selected Nodes
+#MenuTitle: Add Custom Guidelines through Selected Nodes
 # -*- coding: utf-8 -*-
 from GlyphsApp import *
 from vanilla import *
 import math
 __doc__ = """
-Opens a menu to present options for adding guideline(s) to the selected node(s) at a specified angle. Includes presets for pre-defined angles and ratio to create guidelines quickly.
+Opens a menu to present options for adding guideline(s) through selected node(s) by specifying an angle. Includes presets for pre-defined angles and ratio to create guidelines quickly.
 """
 
 #This project uses the ChatGPT model from OpenAI for natural language processing.
@@ -12,9 +12,9 @@ Opens a menu to present options for adding guideline(s) to the selected node(s) 
 #This project was a collaboration between ChatGPT and Gor Jihanian (@gorjious)
 #Credit: OpenAI (https://openai.com/)
 
-class AddGuidelineWindow(object):
+class AddCustomGuideline(object):
     def __init__(self):
-        self.w = FloatingWindow((420, 165), "Add Custom Guideline through Selected Nodes")
+        self.w = FloatingWindow((420, 165), "Add Custom Guidelines through Selected Nodes")
         self.w.angle_input = EditText((10, 10, 50, 22), placeholder="Angle")
         self.w.mirror_checkbox = CheckBox((70, 10, 130, 22), "Mirror angle", callback=self.mirror_angle)
         self.w.keep_open_checkbox = CheckBox((190, 10, 180, 22), "Keep window open", value=True)
@@ -32,7 +32,6 @@ class AddGuidelineWindow(object):
         self.w.add_8_1_button = Button((130, 70, 50, 22), "8:1", callback=self.add_8_1_guideline)
         self.w.add_7_1_button = Button((190, 70, 50, 22), "7:1", callback=self.add_7_1_guideline)
         self.w.add_6_1_button = Button((250, 70, 50, 22), "6:1", callback=self.add_6_1_guideline)
-        
         self.w.add_5_1_button = Button((10, 100, 50, 22), "5:1", callback=self.add_5_1_guideline)
         self.w.add_4_1_button = Button((70, 100, 50, 22), "4:1", callback=self.add_4_1_guideline)
         self.w.add_3_1_button = Button((130, 100, 50, 22), "3:1", callback=self.add_3_1_guideline)
@@ -123,6 +122,10 @@ class AddGuidelineWindow(object):
             if not self.w.keep_open_checkbox.get():
                 self.w.close()
 
+    #PRESETS: ANGLES
+    def add_0_guideline(self, sender):
+        angle = 0
+        self.add_guideline_with_mirror(angle)
     def add_30_guideline(self, sender):
         angle = 30
         self.add_guideline_with_mirror(angle)
@@ -132,21 +135,25 @@ class AddGuidelineWindow(object):
     def add_60_guideline(self, sender):
         angle = 60
         self.add_guideline_with_mirror(angle)
-    def add_0_guideline(self, sender):
-        angle = 0
-        self.add_guideline_with_mirror(angle)
     def add_90_guideline(self, sender):
         angle = 90
         self.add_guideline_with_mirror(angle)
 
-    def add_2_1_guideline(self, sender):
-        angle = math.degrees(math.atan(2/1))
+    #PRESETS: RATIOS
+    def add_10_1_guideline(self, sender):
+        angle = math.degrees(math.atan(10/1))
         self.add_guideline_with_mirror(angle)
-    def add_3_1_guideline(self, sender):
-        angle = math.degrees(math.atan(3/1))
+    def add_9_1_guideline(self, sender):
+        angle = math.degrees(math.atan(9/1))
         self.add_guideline_with_mirror(angle)
-    def add_3_2_guideline(self, sender):
-        angle = math.degrees(math.atan(3/2))
+    def add_8_1_guideline(self, sender):
+        angle = math.degrees(math.atan(8/1))
+        self.add_guideline_with_mirror(angle)
+    def add_7_1_guideline(self, sender):
+        angle = math.degrees(math.atan(7/1))
+        self.add_guideline_with_mirror(angle)  
+    def add_6_1_guideline(self, sender):
+        angle = math.degrees(math.atan(6/1))
         self.add_guideline_with_mirror(angle)
     def add_5_1_guideline(self, sender):
         angle = math.degrees(math.atan(5/1))
@@ -154,22 +161,15 @@ class AddGuidelineWindow(object):
     def add_4_1_guideline(self, sender):
         angle = math.degrees(math.atan(4/1))
         self.add_guideline_with_mirror(angle)
-    def add_8_1_guideline(self, sender):
-        angle = math.degrees(math.atan(8/1))
+    def add_3_1_guideline(self, sender):
+        angle = math.degrees(math.atan(3/1))
         self.add_guideline_with_mirror(angle)
-    def add_7_1_guideline(self, sender):
-        angle = math.degrees(math.atan(7/1))
+    def add_2_1_guideline(self, sender):
+        angle = math.degrees(math.atan(2/1))
         self.add_guideline_with_mirror(angle)
-    def add_6_1_guideline(self, sender):
-        angle = math.degrees(math.atan(6/1))
+    def add_3_2_guideline(self, sender):
+        angle = math.degrees(math.atan(3/2))
         self.add_guideline_with_mirror(angle)
-    def add_9_1_guideline(self, sender):
-        angle = math.degrees(math.atan(9/1))
-        self.add_guideline_with_mirror(angle)
-    def add_10_1_guideline(self, sender):
-        angle = math.degrees(math.atan(10/1))
-        self.add_guideline_with_mirror(angle)
-
 
     def add_italic_guideline(self, sender):
         font = Glyphs.font
@@ -209,8 +209,6 @@ class AddGuidelineWindow(object):
         if not self.w.keep_open_checkbox.get():
             self.w.close()
 
-
-
     def add_guideline_with_mirror(self, angle):
         mirror = self.w.mirror_checkbox.get()
         if mirror:
@@ -241,4 +239,4 @@ class AddGuidelineWindow(object):
         if not self.w.keep_open_checkbox.get():
             self.w.close()
 
-AddGuidelineWindow()
+AddCustomGuideline()
